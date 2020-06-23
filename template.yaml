@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: SQS Sample
+
+Parameters:
+  QueueName:
+    Type: String
+
+Resources:
+  SQSQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      ContentBasedDeduplication: 'true'
+      DelaySeconds: 0
+      FifoQueue: 'true'
+      MaximumMessageSize: 1024
+      MessageRetentionPeriod: 3600
+      QueueName: !Ref QueueName
+      VisibilityTimeout: 30
