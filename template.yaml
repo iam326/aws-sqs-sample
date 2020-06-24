@@ -16,3 +16,7 @@ Resources:
       MessageRetentionPeriod: 3600
       QueueName: !Ref QueueName
       VisibilityTimeout: 30
+
+Outputs:
+  SQSQueueURL:
+    Value: !Ref SQSQueue
