@@ -13,4 +13,4 @@ readonly QUEUE_URL=$(aws cloudformation describe-stacks \
 aws sqs send-message \
   --queue-url ${QUEUE_URL} \
   --message-body $1 \
-  --message-group-id MessageGroupId01
+  --message-group-id $2
